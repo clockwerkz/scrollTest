@@ -6,10 +6,15 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
 }
+
 .hero {
     padding-top: 2rem;
-    height: calc(100vh - 100px);
+    height: calc(200vh - 100px);
     background-color: lightsalmon;
+}
+
+.hero--red {
+    background-color: red;
 }
 
 footer {
@@ -17,11 +22,26 @@ footer {
     height: 100px;
 }
 
+.work {
+    display: flex;
+    &__title {
+        writing-mode: vertical-rl;
+        text-align: center;
+        line-height: 5rem;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            color: black;
+            background-color: white;
+        }
+    }
+}
+
 .horizontal-nav {
     display: flex;
     overflow-x: hidden;
     height: 205px;
-    border:1px solid salmon;
 }
 
 .horizontal-nav::-webkit-scrollbar{
@@ -30,15 +50,25 @@ footer {
 .nav {
     display: flex;
     transform: translateX(0px);
+    transition: all 0.25s ease-out;
     &-item {
         min-width: 200px;
         height: 200px;
         margin: 0 2rem;
         font-size: 2rem;
         background-color: salmon;
+        color: white;
+        font-weight: bold;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 5px solid transparent;
+        cursor: pointer;
+        &:hover {
+            background-color: white;
+            border-color: black;
+            color: black;
+        }
         &--blue {
             background-color: dodgerblue;
         }

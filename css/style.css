@@ -11,13 +11,39 @@ body {
 
 .hero {
   padding-top: 2rem;
-  height: calc(100vh - 100px);
+  height: calc(200vh - 100px);
   background-color: lightsalmon;
+}
+
+.hero--red {
+  background-color: red;
 }
 
 footer {
   background-color: salmon;
   height: 100px;
+}
+
+.work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.work__title {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-align: center;
+  line-height: 5rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.work__title:hover {
+  color: black;
+  background-color: white;
 }
 
 .horizontal-nav {
@@ -26,7 +52,6 @@ footer {
   display: flex;
   overflow-x: hidden;
   height: 205px;
-  border: 1px solid salmon;
 }
 
 .horizontal-nav::-webkit-scrollbar {
@@ -39,6 +64,8 @@ footer {
   display: flex;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .nav-item {
@@ -47,6 +74,8 @@ footer {
   margin: 0 2rem;
   font-size: 2rem;
   background-color: salmon;
+  color: white;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,6 +85,14 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
 }
 
 .nav-item--blue {

@@ -1,22 +1,21 @@
-const horiztontalNavs = document.querySelectorAll(".horizontal-nav");
-let isMouseOver = false;
+const wrapper = document.querySelector(".horizontal-nav");
+const nav = document.querySelector(".nav");
+currentPosition = 0;
 
-horiztontalNavs.forEach(wrapper => {
-    console.log(wrapper);
-    wrapper.addEventListener("mouseenter", handleMouseEnter);
-    wrapper.addEventListener("mouseout", handleMouseOut);
+wrapper.onwheel = handleMouseScrollWheel;
+
+document.querySelector(".work__title").addEventListener("click", function(){
+    currentPosition = 0;
+    nav.style.transform = `translateX(${currentPosition}px)`;
 });
 
-function handleMouseOut() {
-    console.log("mouse exited nav bar");
-}
-
-function handleMouseEnter(){
-    console.log("entered nav bar");
-}
-
 function handleMouseScrollWheel(e){
-    if (isMouseOver) {
-        e.preventDefault();
+    e.preventDefault();
+    const dY = e.deltaY;
+    console.log(window.innerWidth - 100);
+    if ((dY > 0 && currentPosition - dY >= -(nav.clientWidth - window.innerWidth + 190)) || (dY < 0 && currentPosition - dY <= 0)) {
+        currentPosition -=  e.deltaY;
     }
+    nav.style.transform = `translateX(${currentPosition}px)`;
+    console.log(currentPosition, nav.clientWidth);
 };
