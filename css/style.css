@@ -11,17 +11,12 @@ body {
 
 .hero {
   padding-top: 2rem;
-  height: calc(200vh - 100px);
   background-color: lightsalmon;
+  height: 100vh;
 }
 
 .hero--red {
   background-color: red;
-}
-
-footer {
-  background-color: salmon;
-  height: 100px;
 }
 
 .work {
